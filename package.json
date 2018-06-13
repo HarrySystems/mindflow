@@ -1,0 +1,19 @@
+{
+  "name": "mindflow",
+  "version": "1.0.1",
+  "description": "Javascript library that allows the usage of Flow Based Programming paradigm",
+  "main": "mindflow.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/harrysystems/mindflow.git"
+  },
+  "author": "HarrySystems",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harrysystems/mindflow/issues"
+  },
+  "homepage": "https://github.com/harrysystems/mindflow#readme"
+}
