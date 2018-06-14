@@ -17,14 +17,7 @@ class MindFlow {
 			
 			// return a function that actually executes this node
 			return function({ data, input }) {
-				return MindFlow.execute(
-					Object.assign(
-						{
-							node: about.name
-						},
-						arguments[0]
-					)
-				)
+				return execute(arguments[0])
 			}
 		}
 	}
