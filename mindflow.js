@@ -1,6 +1,6 @@
 class MindFlow {
 	// define node 
-	static node({ about, execute }) {
+	static node({ about, format, execute }) {
 		// if defining multiple nodes
 		if(arguments[0] instanceof Array) {
 			for(let node of arguments[0]) {
@@ -15,7 +15,17 @@ class MindFlow {
 			// define this node
 			MindFlow.nodes[about.name] = arguments[0]
 			
-			//return arguments[0]
+			// return a function that actually executes this node
+			return function({ data, input }) {
+				return MindFlow.execute(
+					Object.assign(
+						{
+							node: about.name
+						},
+						arguments[0]
+					)
+				)
+			}
 		}
 	}
 	
