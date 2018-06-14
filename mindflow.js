@@ -17,14 +17,29 @@ class MindFlow {
 			
 			// return a function that actually executes this node
 			return function({ data, input }) {
-				return execute(arguments[0])
+				return MindFlow.execute(
+					Object.assign(
+						{
+							node: execute
+						},
+						arguments[0]
+					)
+				)
 			}
 		}
 	}
 	
 	// call node
 	static execute({ node, data, input }) {
-		return MindFlow.nodes[node].execute(arguments[0])
+		switch(typeof node) {
+			case "string":
+				return MindFlow.nodes[node].execute(arguments[0])
+				break
+
+			case "function":
+				return node(arguments[0])
+				break
+		}
 	}
 }
 
